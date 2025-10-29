@@ -88,8 +88,8 @@ def show_form(session_id):
         <h1>CCEW Form</h1>
         <div class="info">
             <p><strong>Job Number:</strong> {job_data.get('ID', 'N/A')}</p>
-            <p><strong>Customer:</strong> {job_data.get('Customer', {{}}}).get('CompanyName', 'N/A')}</p>
-            <p><strong>Site:</strong> {job_data.get('Site', {{}}}).get('Name', 'N/A')}</p>
+            <p><strong>Customer:</strong> {job_data.get('Customer', {}).get('CompanyName', 'N/A')}</p>
+            <p><strong>Site:</strong> {job_data.get('Site', {}).get('Name', 'N/A')}</p>
         </div>
         
         <form id="ccewForm">
@@ -175,4 +175,3 @@ def success():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
-
