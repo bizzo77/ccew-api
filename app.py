@@ -67,8 +67,8 @@ def generate_ccew():
             'installerContractorExpiryDate': '2027-02-02',
             
             # Tester License Details (from technician + hardcoded)
-            'testerFirstName': simpro_data.get('technician_name', '').split()[0] if simpro_data.get('technician_name') else '',
-            'testerLastName': ' '.join(simpro_data.get('technician_name', '').split()[1:]) if simpro_data.get('technician_name') and len(simpro_data.get('technician_name', '').split()) > 1 else '',
+            'testerFirstName': simpro_data.get('technician_first_name', simpro_data.get('technician_name', '').split()[0] if simpro_data.get('technician_name') else ''),
+            'testerLastName': simpro_data.get('technician_last_name', ' '.join(simpro_data.get('technician_name', '').split()[1:]) if simpro_data.get('technician_name') and len(simpro_data.get('technician_name', '').split()) > 1 else ''),
             'testerStreetNumber': '177',
             'testerStreetName': 'Bringelly Road',
             'testerSuburb': 'Leppington',
@@ -76,6 +76,8 @@ def generate_ccew():
             'testerPostCode': '2179',
             'testerEmail': 'admin@proformelec.com.au',
             'testerOfficeNo': '47068270',
+            'testerContractorLicenseNo': simpro_data.get('technician_license_number', ''),
+            'testerContractorExpiryDate': simpro_data.get('technician_license_expiry', ''),
         }
         
         # Store session data
